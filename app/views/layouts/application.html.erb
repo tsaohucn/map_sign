@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MapSign</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+          <%= link_to('MapSign', root_path)  %>
+        </li>
+      </ul>     
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li>
+            <%= image_tag current_user.avatar.url(:thumb), class: "avatar img-circle" %>
+          </li>
+          <li>
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+          </li>
+        <% else %>
+          <li>
+          <%= link_to('Login', new_user_session_path)  %>
+          </li>
+        <% end %>
+      </ul>     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>

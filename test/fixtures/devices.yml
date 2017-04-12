@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  token: MyString
+  device: MyString
+  os: MyString
+  version: MyString
+
+two:
+  token: MyString
+  device: MyString
+  os: MyString
+  version: MyString
